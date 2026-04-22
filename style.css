@@ -1,0 +1,34 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  height: 100vh;
+  font-family: "Roboto";
+  background: #ede9e6;
+}
+
+header {
+  height: 10vh;
+  background: #5c4f4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  color: #ede9e6;
+  font-size: 5vh;
+}
+
+.books-container {
+  background: #c9996b;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+.book-title {
+  color: #ede9e6;
+}
