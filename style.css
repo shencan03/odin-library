@@ -8,25 +8,21 @@ body {
 }
 
 header {
-  height: 10vh;
   background: #5c4f4a;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-footer {
-  height: 10vh;
+  padding: 1.25rem 2rem;
 }
 
 header h1 {
   color: #ede9e6;
-  font-size: 5vh;
+  font-size: 4rem;
 }
 
 main {
   background: #ede9e6;
-  padding: 5vh 10vw;
+  padding: 4rem 8rem;
   min-height: 80vh;
 }
 
@@ -38,11 +34,12 @@ main {
   background: #5c766d;
   padding: 1vh 1vw;
   border-radius: 2rem;
+  min-width: 10rem;
 }
 
 .book-title {
   color: #ede9e6;
-  font-size: 3.5vh;
+  font-size: 2rem;
   font-weight: 900;
 }
 
@@ -60,17 +57,29 @@ main {
 
 .book-author {
   color: #ede9e6;
-  font-size: 2vh;
+  font-size: 1.2rem;
   font-style: italic;
   font-weight: 500;
 }
 
 .book-pages {
   color: #ede9e6;
-  font-size: 1.5vh;
+  font-size: 1rem;
   font-weight: 900;
 }
 
 hr {
   width: 100%;
+}
+
+footer {
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyright {
+  font-size: 1rem;
 }

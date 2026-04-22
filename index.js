@@ -24,6 +24,7 @@ const appendBook = (title, author, pages, read) => {
 
 appendBook("Harry Potter", "J.K Rowling", 100, false);
 appendBook("The Lord of The Rings", "J.R.R Tolkien", 1012, false);
+
 for (let i = 0; i < 30; i++) {
   appendBook("The Lord of The Rings", "J.R.R Tolkien", 1012, false);
 }
