@@ -22,7 +22,11 @@ const appendBook = (title, author, pages, read) => {
 //   }
 // }
 
-appendBook("harry potter", "J.K Rowling", 100, false);
+appendBook("Harry Potter", "J.K Rowling", 100, false);
+appendBook("The Lord of The Rings", "J.R.R Tolkien", 1012, false);
+for (let i = 0; i < 100; i++) {
+  appendBook("The Lord of The Rings", "J.R.R Tolkien", 1012, false);
+}
 
 const booksContainer = document.querySelector(".books-container");
 
@@ -41,7 +45,7 @@ for (let i = 0; i < books.length; i++) {
 
   const bookAuthor = document.createElement("p");
   bookAuthor.classList.add("book-author");
-  bookAuthor.textContent = `by ${books[i].author}`;
+  bookAuthor.textContent = `${books[i].author}`;
   bookCard.appendChild(bookAuthor);
 
   const bookPages = document.createElement("span");

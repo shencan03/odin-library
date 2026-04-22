@@ -4,9 +4,8 @@
 }
 
 body {
-  height: 100vh;
   font-family: "Roboto";
-  background: #ede9e6;
+  height: 100vh;
 }
 
 header {
@@ -22,13 +21,53 @@ header h1 {
   font-size: 5vh;
 }
 
+main {
+  background: #ede9e6;
+  min-height: 90vh;
+  padding: 5vh 10vw;
+}
+
 .books-container {
-  background: #c9996b;
-  width: 100vw;
-  height: 100vh;
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
+  border: solid 1px red;
+  gap: 1rem;
+  background: #5c766d;
+  padding: 1vh 1vw;
+  border-radius: 2rem;
 }
 
 .book-title {
   color: #ede9e6;
+  font-size: 3.5vh;
+  font-weight: 900;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  border: solid 4px #5c4f4a;
+  border-radius: 2rem;
+  background: #c9996b;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+  padding: 5% 5%;
+}
+
+.book-author {
+  color: #ede9e6;
+  font-size: 2vh;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.book-pages {
+  color: #ede9e6;
+  font-size: 1.5vh;
+  font-weight: 900;
+}
+
+hr {
+  width: 100%;
 }
