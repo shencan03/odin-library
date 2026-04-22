@@ -5,7 +5,6 @@
 
 body {
   font-family: "Roboto";
-  height: 100vh;
 }
 
 header {
@@ -16,6 +15,10 @@ header {
   align-items: center;
 }
 
+footer {
+  height: 10vh;
+}
+
 header h1 {
   color: #ede9e6;
   font-size: 5vh;
@@ -23,8 +26,8 @@ header h1 {
 
 main {
   background: #ede9e6;
-  min-height: 90vh;
   padding: 5vh 10vw;
+  min-height: 80vh;
 }
 
 .books-container {
