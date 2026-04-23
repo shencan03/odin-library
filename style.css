@@ -51,8 +51,15 @@ main {
   background: #c9996b;
   align-items: center;
   justify-content: center;
-  gap: 2vh;
+  gap: 1rem;
   padding: 5% 5%;
+}
+
+.book-button {
+  color: #eee9e6;
+  box-shadow: red;
+  height: 4rem;
+  width: auto;
 }
 
 .book-author {
