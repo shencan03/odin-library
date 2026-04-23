@@ -45,7 +45,7 @@ const appendBookCard = (book) => {
 
   const svgNS = "http://www.w3.org/2000/svg";
   const bookRemoveBtn = document.createElementNS(svgNS, "svg");
-  bookRemoveBtn.id = "remove-book";
+  bookRemoveBtn.id = "remove-book-button";
   bookRemoveBtn.addEventListener("click", (e) => {
     const targetCard = e.currentTarget.parentElement;
     delete books[targetCard.id];
@@ -64,6 +64,11 @@ const appendBookCard = (book) => {
   booksContainer.appendChild(bookCard);
 };
 
+const fillBtnCard = () => {
+  const buttonCard = document.getElementById("button-card");
+  buttonCard.replaceChildren();
+};
+
 const appendBtnCard = () => {
   const bookBtnCard = document.createElement("div");
   bookBtnCard.classList.add("book-card");
@@ -71,7 +76,7 @@ const appendBtnCard = () => {
 
   const svgNS = "http://www.w3.org/2000/svg";
   const bookBtn = document.createElementNS(svgNS, "svg");
-  bookBtn.id = "add-book";
+  bookBtn.id = "add-book-button";
 
   bookBtn.setAttribute("viewBox", "0 0 24 24");
 
@@ -82,6 +87,8 @@ const appendBtnCard = () => {
   );
   svgPath.setAttribute("fill", "currentColor");
   bookBtn.appendChild(svgPath);
+
+  bookBtn.addEventListener("click", fillBtnCard);
 
   bookBtnCard.appendChild(bookBtn);
   booksContainer.appendChild(bookBtnCard);
