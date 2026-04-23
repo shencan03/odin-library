@@ -47,7 +47,7 @@ const appendBookCard = (book) => {
   const bookRemoveBtn = document.createElementNS(svgNS, "svg");
   bookRemoveBtn.id = "remove-book";
   bookRemoveBtn.addEventListener("click", (e) => {
-    const targetCard = e.target.parentElement.parentElement;
+    const targetCard = e.currentTarget.parentElement;
     delete books[targetCard.id];
     targetCard.remove();
   });
