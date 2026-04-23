@@ -1,4 +1,5 @@
-const books = [];
+const books = {};
+const booksContainer = document.querySelector(".books-container");
 
 function Book(title, author, pages, read) {
   if (!new.target)
@@ -13,17 +14,13 @@ function Book(title, author, pages, read) {
 
 const appendBook = (title, author, pages, read) => {
   const newBook = new Book(title, author, pages, read);
-  books.push(newBook);
+  books[newBook.id] = newBook;
 };
 
 appendBook("Harry Potter", "J.K Rowling", 100, false);
 appendBook("The Lord of The Rings", "J.R.R Tolkien", 1012, false);
 
-for (let i = 0; i < 10; i++) {
-  appendBook("The Lord of The Rings", "J.R.R Tolkien", 1012, false);
-}
-
-const appendBookCard = (booksContainer, book) => {
+const appendBookCard = (book) => {
   const bookCard = document.createElement("div");
   bookCard.classList.add("book-card");
   bookCard.id = book.id;
@@ -46,17 +43,34 @@ const appendBookCard = (booksContainer, book) => {
   bookPages.textContent = book.pages;
   bookCard.appendChild(bookPages);
 
+  const svgNS = "http://www.w3.org/2000/svg";
+  const bookRemoveBtn = document.createElementNS(svgNS, "svg");
+  bookRemoveBtn.id = "remove-book";
+  bookRemoveBtn.addEventListener("click", (e) => {
+    const targetCard = e.target.parentElement.parentElement;
+    delete books[targetCard.id];
+    targetCard.remove();
+  });
+  bookRemoveBtn.setAttribute("viewBox", "0 0 24 24");
+  const svgPath = document.createElementNS(svgNS, "path");
+  svgPath.setAttribute("fill", "currentColor");
+  svgPath.setAttribute(
+    "d",
+    "M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z",
+  );
+  bookRemoveBtn.appendChild(svgPath);
+  bookCard.appendChild(bookRemoveBtn);
+
   booksContainer.appendChild(bookCard);
 };
 
-const appendBtnCard = (booksContainer) => {
+const appendBtnCard = () => {
   const bookBtnCard = document.createElement("div");
   bookBtnCard.classList.add("book-card");
   bookBtnCard.id = "button-card";
 
   const svgNS = "http://www.w3.org/2000/svg";
   const bookBtn = document.createElementNS(svgNS, "svg");
-  bookBtn.classList.add("book-button");
   bookBtn.id = "add-book";
 
   bookBtn.setAttribute("viewBox", "0 0 24 24");
@@ -73,11 +87,8 @@ const appendBtnCard = (booksContainer) => {
   booksContainer.appendChild(bookBtnCard);
 };
 
-const booksContainer = document.querySelector(".books-container");
-
-for (let i = 0; i < books.length; i++) {
-  appendBookCard(booksContainer, books[i]);
-  if (i == books.length - 1) {
-    appendBtnCard(booksContainer);
-  }
+for (id of Object.keys(books)) {
+  appendBookCard(books[id]);
 }
+
+appendBtnCard();

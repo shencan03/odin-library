@@ -55,11 +55,18 @@ main {
   padding: 5% 5%;
 }
 
-.book-button {
+#add-book {
   color: #eee9e6;
-  box-shadow: red;
   height: 4rem;
   width: auto;
+  cursor: pointer;
+}
+
+#remove-book {
+  color: #880808;
+  height: 2rem;
+  width: auto;
+  align-self: flex-end;
 }
 
 .book-author {
