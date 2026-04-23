@@ -35,7 +35,7 @@ const appendBookCard = (book) => {
 
   const bookAuthor = document.createElement("p");
   bookAuthor.classList.add("book-author");
-  bookAuthor.textContent = `${book.author}`;
+  bookAuthor.textContent = book.author;
   bookCard.appendChild(bookAuthor);
 
   const bookPages = document.createElement("span");
@@ -65,8 +65,27 @@ const appendBookCard = (book) => {
 };
 
 const fillBtnCard = () => {
-  const buttonCard = document.getElementById("button-card");
-  buttonCard.replaceChildren();
+  const bookBtnCard = document.getElementById("button-card");
+  bookBtnCard.replaceChildren();
+
+  const bookTitle = document.createElement("h3");
+  bookTitle.setAttribute("contenteditable", "true");
+  bookTitle.classList.add("book-title");
+  bookBtnCard.appendChild(bookTitle);
+  bookTitle.focus();
+
+  const line = document.createElement("hr");
+  bookBtnCard.appendChild(line);
+
+  const bookAuthor = document.createElement("p");
+  bookAuthor.setAttribute("contenteditable", "true");
+  bookAuthor.classList.add("book-author");
+  bookBtnCard.appendChild(bookAuthor);
+
+  const bookPages = document.createElement("span");
+  bookPages.setAttribute("contenteditable", "true");
+  bookPages.classList.add("book-pages");
+  bookBtnCard.appendChild(bookPages);
 };
 
 const appendBtnCard = () => {
