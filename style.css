@@ -67,6 +67,7 @@ main {
   height: 2rem;
   width: auto;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 .book-author {
