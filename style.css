@@ -73,6 +73,13 @@ main {
   outline: none;
 }
 
+#button-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #book-confirm {
   height: 2rem;
   width: auto;
