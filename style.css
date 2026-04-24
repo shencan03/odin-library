@@ -84,6 +84,10 @@ main {
   color: #eee9e6;
 }
 
+#edit {
+  rotate: 0deg;
+}
+
 #add-book-button {
   color: #eee9e6;
   height: 4rem;

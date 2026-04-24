@@ -24,6 +24,7 @@ appendBook("The Lord of The Rings", "J.R.R Tolkien", 1012, false);
 
 const toggleReadBtn = (e) => {
   const bookReadBtn = e.currentTarget;
+
   if (bookReadBtn.classList.item(1) == "read") {
     bookReadBtn.classList.remove("read");
     bookReadBtn.classList.add("not-read");
@@ -63,6 +64,7 @@ const appendBookCard = (book) => {
 
   const bookReadBtn = document.createElement("span");
   bookReadBtn.classList.add("read-button");
+
   if (book.read == true) {
     bookReadBtn.classList.add("read");
     bookReadBtn.textContent = "read";
@@ -139,6 +141,14 @@ const fillBtnCard = () => {
   const bookEdit = document.createElement("div");
   bookEdit.classList.add("book-edit");
 
+  const bookReadBtn = document.createElement("span");
+  bookReadBtn.classList.add("read-button");
+  bookReadBtn.classList.add("read");
+  bookReadBtn.id = "edit";
+  bookReadBtn.textContent = "read";
+  bookReadBtn.addEventListener("click", toggleReadBtn);
+  bookBtnCard.appendChild(bookReadBtn);
+
   const bookConfirmBtn = document.createElementNS(svgNS, "svg");
   bookConfirmBtn.id = "book-confirm";
   bookConfirmBtn.setAttribute("viewBox", "0 0 24 24");
@@ -154,7 +164,7 @@ const fillBtnCard = () => {
       bookTitle.textContent,
       bookAuthor.textContent,
       bookPages.textContent,
-      false,
+      bookReadBtn.textContent == "read" ? true : false,
     );
     document.getElementById("button-card").remove();
     appendBookCard(books[bookId]);
