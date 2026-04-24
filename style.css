@@ -50,7 +50,7 @@ main {
   border-radius: 2rem;
   background: #c9996b;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
   padding: 5% 5%;
 }
@@ -71,6 +71,27 @@ main {
 
 #button-card > * {
   outline: none;
+}
+
+#book-confirm {
+  height: 2rem;
+  width: auto;
+  cursor: pointer;
+  color: #5b756d;
+}
+
+#book-cancel {
+  height: 2rem;
+  width: auto;
+  cursor: pointer;
+  color: #880708;
+}
+
+.book-edit {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .placeholder {

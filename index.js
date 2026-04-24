@@ -116,6 +116,37 @@ const fillBtnCard = () => {
     { once: true },
   );
   bookBtnCard.appendChild(bookPages);
+
+  const svgNS = "http://www.w3.org/2000/svg";
+
+  const bookEdit = document.createElement("div");
+  bookEdit.classList.add("book-edit");
+
+  const bookConfirmBtn = document.createElementNS(svgNS, "svg");
+  bookConfirmBtn.id = "book-confirm";
+  bookConfirmBtn.setAttribute("viewBox", "0 0 24 24");
+  const confirmPath = document.createElementNS(svgNS, "path");
+  confirmPath.setAttribute(
+    "d",
+    "M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20M16.59 7.58L10 14.17L7.41 11.59L6 13L10 17L18 9L16.59 7.58Z",
+  );
+  confirmPath.setAttribute("fill", "currentColor");
+  bookConfirmBtn.appendChild(confirmPath);
+  bookEdit.appendChild(bookConfirmBtn);
+
+  const bookCancelBtn = document.createElementNS(svgNS, "svg");
+  bookCancelBtn.id = "book-cancel";
+  bookCancelBtn.setAttribute("viewBox", "0 0 24 24");
+  const cancelPath = document.createElementNS(svgNS, "path");
+  cancelPath.setAttribute(
+    "d",
+    "M12 2C17.5 2 22 6.5 22 12S17.5 22 12 22 2 17.5 2 12 6.5 2 12 2M12 4C10.1 4 8.4 4.6 7.1 5.7L18.3 16.9C19.3 15.5 20 13.8 20 12C20 7.6 16.4 4 12 4M16.9 18.3L5.7 7.1C4.6 8.4 4 10.1 4 12C4 16.4 7.6 20 12 20C13.9 20 15.6 19.4 16.9 18.3Z",
+  );
+  cancelPath.setAttribute("fill", "currentColor");
+  bookCancelBtn.appendChild(cancelPath);
+  bookEdit.appendChild(bookCancelBtn);
+
+  bookBtnCard.appendChild(bookEdit);
 };
 
 const appendBtnCard = () => {
