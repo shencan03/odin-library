@@ -55,6 +55,35 @@ main {
   padding: 5% 5%;
 }
 
+.book-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.read-button {
+  color: #5c4f4a;
+  rotate: -20deg;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  padding: 0.3rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.not-read {
+  background: #ffffb8;
+  color: #880708;
+  opacity: 50%;
+}
+
+.read {
+  background: #6ebe6e;
+  color: #eee9e6;
+}
+
 #add-book-button {
   color: #eee9e6;
   height: 4rem;

@@ -22,6 +22,19 @@ const appendBook = (title, author, pages, read) => {
 appendBook("Harry Potter", "J.K Rowling", 100, false);
 appendBook("The Lord of The Rings", "J.R.R Tolkien", 1012, false);
 
+const toggleReadBtn = (e) => {
+  const bookReadBtn = e.currentTarget;
+  if (bookReadBtn.classList.item(1) == "read") {
+    bookReadBtn.classList.remove("read");
+    bookReadBtn.classList.add("not-read");
+    bookReadBtn.textContent = "not read";
+  } else {
+    bookReadBtn.classList.remove("not-read");
+    bookReadBtn.classList.add("read");
+    bookReadBtn.textContent = "read";
+  }
+};
+
 const appendBookCard = (book) => {
   const bookCard = document.createElement("div");
   bookCard.classList.add("book-card");
@@ -45,11 +58,27 @@ const appendBookCard = (book) => {
   bookPages.textContent = book.pages;
   bookCard.appendChild(bookPages);
 
+  const bookCardFooter = document.createElement("div");
+  bookCardFooter.classList.add("book-card-footer");
+
+  const bookReadBtn = document.createElement("span");
+  bookReadBtn.classList.add("read-button");
+  if (book.read == true) {
+    bookReadBtn.classList.add("read");
+    bookReadBtn.textContent = "read";
+  } else {
+    bookReadBtn.classList.add("not-read");
+    bookReadBtn.textContent = "not read";
+  }
+  bookReadBtn.addEventListener("click", toggleReadBtn);
+  bookCardFooter.appendChild(bookReadBtn);
+
   const svgNS = "http://www.w3.org/2000/svg";
+
   const bookRemoveBtn = document.createElementNS(svgNS, "svg");
   bookRemoveBtn.id = "remove-book-button";
   bookRemoveBtn.addEventListener("click", (e) => {
-    const targetCard = e.currentTarget.parentElement;
+    const targetCard = e.currentTarget.parentElement.parentElement;
     delete books[targetCard.id];
     targetCard.remove();
   });
@@ -61,8 +90,9 @@ const appendBookCard = (book) => {
     "M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z",
   );
   bookRemoveBtn.appendChild(svgPath);
-  bookCard.appendChild(bookRemoveBtn);
+  bookCardFooter.appendChild(bookRemoveBtn);
 
+  bookCard.appendChild(bookCardFooter);
   booksContainer.appendChild(bookCard);
 };
 
