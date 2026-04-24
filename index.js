@@ -71,6 +71,16 @@ const fillBtnCard = () => {
   const bookTitle = document.createElement("h3");
   bookTitle.setAttribute("contenteditable", "true");
   bookTitle.classList.add("book-title");
+  bookTitle.classList.add("placeholder");
+  bookTitle.textContent = "Title..";
+  bookTitle.addEventListener(
+    "keydown",
+    (e) => {
+      e.currentTarget.textContent = "";
+      e.currentTarget.classList.remove("placeholder");
+    },
+    { once: true },
+  );
   bookBtnCard.appendChild(bookTitle);
   bookTitle.focus();
 
@@ -80,11 +90,31 @@ const fillBtnCard = () => {
   const bookAuthor = document.createElement("p");
   bookAuthor.setAttribute("contenteditable", "true");
   bookAuthor.classList.add("book-author");
+  bookAuthor.classList.add("placeholder");
+  bookAuthor.textContent = "Author..";
+  bookAuthor.addEventListener(
+    "keydown",
+    (e) => {
+      e.currentTarget.textContent = "";
+      e.currentTarget.classList.remove("placeholder");
+    },
+    { once: true },
+  );
   bookBtnCard.appendChild(bookAuthor);
 
   const bookPages = document.createElement("span");
   bookPages.setAttribute("contenteditable", "true");
   bookPages.classList.add("book-pages");
+  bookPages.classList.add("placeholder");
+  bookPages.textContent = "123..";
+  bookPages.addEventListener(
+    "keydown",
+    (e) => {
+      e.currentTarget.textContent = "";
+      e.currentTarget.classList.remove("placeholder");
+    },
+    { once: true },
+  );
   bookBtnCard.appendChild(bookPages);
 };
 

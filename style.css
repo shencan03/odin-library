@@ -73,6 +73,10 @@ main {
   outline: none;
 }
 
+.placeholder {
+  opacity: 50%;
+}
+
 .book-author {
   color: #ede9e6;
   font-size: 1.2rem;
