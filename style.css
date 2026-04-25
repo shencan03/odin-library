@@ -29,7 +29,6 @@ main {
 .books-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  border: solid 1px red;
   gap: 1rem;
   background: #5c766d;
   padding: 1vh 1vw;
