@@ -77,10 +77,26 @@ const appendBookCard = (book) => {
 
   const svgNS = "http://www.w3.org/2000/svg";
 
+  const footerEditRemove = document.createElement("div");
+  footerEditRemove.classList.add("footer-edit-remove");
+
+  const bookEditBtn = document.createElementNS(svgNS, "svg");
+  bookEditBtn.classList.add("edit-book-button");
+  bookEditBtn.setAttribute("viewBox", "0 0 24 24");
+  const editSvgPath = document.createElementNS(svgNS, "path");
+  editSvgPath.setAttribute("fill", "currentColor");
+  editSvgPath.setAttribute(
+    "d",
+    "M6 2C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20.1L20 10.1V8L14 2H6M13 3.5L18.5 9H13V3.5M20.1 13C20 13 19.8 13.1 19.7 13.2L18.7 14.2L20.8 16.3L21.8 15.3C22 15.1 22 14.7 21.8 14.5L20.5 13.2C20.4 13.1 20.3 13 20.1 13M18.1 14.8L12 20.9V23H14.1L20.2 16.9L18.1 14.8Z",
+  );
+  bookEditBtn.appendChild(editSvgPath);
+  footerEditRemove.appendChild(bookEditBtn);
+
   const bookRemoveBtn = document.createElementNS(svgNS, "svg");
   bookRemoveBtn.classList.add("remove-book-button");
   bookRemoveBtn.addEventListener("click", (e) => {
-    const targetCard = e.currentTarget.parentElement.parentElement;
+    const targetCard =
+      e.currentTarget.parentElement.parentElement.parentElement;
     delete books[targetCard.id];
     targetCard.remove();
   });
@@ -92,8 +108,9 @@ const appendBookCard = (book) => {
     "M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z",
   );
   bookRemoveBtn.appendChild(svgPath);
-  bookCardFooter.appendChild(bookRemoveBtn);
+  footerEditRemove.appendChild(bookRemoveBtn);
 
+  bookCardFooter.appendChild(footerEditRemove);
   bookCard.appendChild(bookCardFooter);
   booksContainer.appendChild(bookCard);
 };

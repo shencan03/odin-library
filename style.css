@@ -61,6 +61,13 @@ main {
   width: 100%;
 }
 
+.footer-edit-remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1rem;
+}
+
 .read-button {
   color: #5c4f4a;
   rotate: -20deg;
@@ -96,6 +103,13 @@ main {
 
 .remove-book-button {
   color: #880808;
+  height: 2rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.edit-book-button {
+  color: #eee9e6;
   height: 2rem;
   width: auto;
   cursor: pointer;
