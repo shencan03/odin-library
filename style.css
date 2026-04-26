@@ -94,7 +94,7 @@ main {
   cursor: pointer;
 }
 
-#remove-book-button {
+.remove-book-button {
   color: #880808;
   height: 2rem;
   width: auto;
